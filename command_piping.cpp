@@ -1,16 +1,20 @@
 #include "rdi_command_piping.h"
+#include<string>
+using namespace std;
 
 
-std::string exec(const std::string& cmd)
+string RDI::execute_command(string& cmd)
 {
-    redi::ipstream proc(cmd, redi::pstreams::pstdout|redi::pstreams::pstderr);
-    std::string line, result ="";
-    while(std::getline(proc.out(), line))
-    {
-       if(result.size() > 0)
-           result+="\n";
-       result+=line;
-    }
-    return result;
+	redi::ipstream proc(cmd, redi::pstreams::pstdout|redi::pstreams::pstderr);
+	string line, result ="";
+	while(getline(proc.out(), line))
+	{
+	   if(result.size() > 0)
+		   result+="\n";
+	   result+=line;
+	}
+	return result;
 }
+
+
 
