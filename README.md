@@ -1,10 +1,10 @@
 # command_piping
 Execute a command and get result back as a string.
 
-# Example
+## Example
 
-```
-cout << execute_command("cowsay hi") + '\n';
+```c++
+cout << RDI::execute_command("cowsay hi") + '\n';
 ```
 
 output:
