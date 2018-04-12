@@ -3,7 +3,7 @@
 using namespace std;
 
 
-string RDI::execute_command(string& cmd)
+string RDI::execute_command(const string& cmd)
 {
 	redi::ipstream proc(cmd, redi::pstreams::pstdout|redi::pstreams::pstderr);
 	string line, result ="";
